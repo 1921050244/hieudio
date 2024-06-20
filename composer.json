@@ -1,8 +1,0 @@
-{
-    "require": {
-        "cloudinary/cloudinary_php": "^2.14",
-        "guzzlehttp/guzzle": "^7.8",
-        "symfony/dom-crawler": "^6.0",
-        "guzzlehttp/promises": "^2.0"
-    }
-}
