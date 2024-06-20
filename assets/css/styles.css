@@ -1,0 +1,4283 @@
+body {
+    min-height: 100vh;
+    font-family: Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+}
+
+
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 70px;
+}
+
+.nav-item {
+    margin-right: 10px;
+    position: relative;
+    
+}
+
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: 'Oswald' !important;
+    height: 70px;
+
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.search-box input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.search-box button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+    width: 500px;
+    list-style: none;
+    padding: 10px 0; /* Thêm padding ở đỉnh của dropdown */
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.dropdown::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 10%; /* Điều chỉnh giá trị left tùy theo mong muốn của bạn */
+    transform: translateX(-50%);
+    border-width: 0 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent #ffffff;
+    z-index: 4;
+}
+.dropdowns::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 30%; /* Điều chỉnh giá trị left tùy theo mong muốn của bạn */
+    transform: translateX(-50%);
+    border-width: 0 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent #ffffff;
+    z-index: 4;
+}
+
+
+.nav-item:hover .dropdown {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các item chuyển sang cột tiếp theo khi cột đầy */
+}
+
+
+.nav-item:not(:hover) .dropdown {
+    display: none;
+}
+
+.dropdown li {
+    margin: 0;
+    flex: 0 0 calc(50% - 10px); /* Đặt chiều rộng cố định cho mỗi item */
+    box-sizing: border-box;
+    max-height: 320px; /* Chiều cao cố định cho 8 thể loại, bạn có thể điều chỉnh nếu cần */
+}
+.dropdown li:hover {
+background-color: #ccc;
+}
+.dropdown a {
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    color: #000000;
+    font-size: 13px;
+    margin-left: 10px;
+    font-weight: 400;
+}
+
+.nav-item:hover .dropdown li:nth-child(8n)::after {
+    content: '';
+    flex-basis: 100%; /* Tạo một dòng mới sau mỗi 8 items */
+    width: 0;
+    height: 0;
+}
+.dropdowns {
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+    width: 150px;
+    list-style: none;
+    padding: 10px 0; /* Thêm padding ở đỉnh của dropdown */
+    margin: 0;
+}
+
+.nav-item:hover .dropdowns {
+    display: block;
+}
+
+.dropdowns li {
+    margin: 0;
+    box-sizing: border-box;
+}
+.dropdowns li:hover {
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #c3cba0;
+}
+
+.dropdowns a {
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    color: #000000;
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 14px;
+
+}
+
+
+
+
+
+h2 {
+    text-align: center;
+}
+
+/* Trong file CSS của bạn hoặc thêm vào trong thẻ <style> của HTML */
+
+
+
+.story-details {
+    text-align: left;
+}
+
+.story-details p {
+    display: inline-block;
+    margin-right: 10px; /* Khoảng cách giữa các mục, bạn có thể điều chỉnh giá trị này theo ý muốn */
+}
+.tomtat_v1{
+    text-align: justify;
+    color: #757474;
+    font-family: Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;;
+
+
+}
+/* CSS để giới hạn số dòng và thêm dấu ba chấm */
+.tomtat_v1 {
+    display: -webkit-box;
+    overflow: hidden;
+}
+p.tomtat_v1.overflowed {
+    margin-bottom: 5px;
+    margin-top: 8px;
+
+}
+/* Class để thêm dấu ba chấm khi hover */
+.tieude {
+    text-transform: capitalize;
+    text-decoration: none; /* Xóa gạch chân */
+    color: initial; /* Đặt màu văn bản mặc định */
+    transition: color 0.3s; /* Thêm hiệu ứng màu khi hover */
+    font-family: 'Inter' !important;
+    font-weight: 600;
+    font-size: 15px;
+    font-family: Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;;
+
+
+}
+
+.tieude:hover {
+    color: #b78a28!important; /* Đổi màu khi hover */
+}
+
+.truyenmoicapnhat{
+    text-decoration: none;
+    color: #333;
+    font-family: 'Inter' !important;
+    text-align: right;
+
+}
+.story-list-abc p {
+    color: #347b4c;
+    font-size: 12px;
+}
+.story-list-abc {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.story-list-abc th, .story-list-abc td {
+
+    padding: 10px;
+    text-align: left;
+}
+
+.story-list-abc th {
+    background-color: #f2f2f2;
+}
+
+.story-list-abc a {
+    text-decoration: none;
+    color: #000000;
+    text-transform: capitalize;
+    font-size: 13px;
+}
+
+.story-list-abc a:hover {
+    text-decoration: underline;
+    text-decoration: none;
+    color: #893636;
+}
+.story-list-abc tr:nth-child(even) {
+    background-color: #f9f9f9; /* Màu nền cho hàng chẵn */
+}
+
+.story-list-abc tr:nth-child(odd) {
+    background-color: #ffffff; /* Màu nền familycho hàng lẻ */
+}
+
+/* Styling for Containers */
+
+
+/* Định dạng các label và select trong phần cài đặt */
+#settingsPanel label,
+#settingsPanel select,
+#settingsPanel input[type="color"] {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Định dạng màu nền */
+#backgroundcolor {
+    margin-top: 10px;
+}
+
+/* Thêm vào CSS hiện tại của bạn */
+.content-container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+.chapter-info .next-chapter {
+    right: 0;
+}
+
+.chapter-info .chapter-dropdown {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+
+.chapter-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.chapter-navigation .prev-chapter,
+.chapter-navigation .next-chapter,
+.chapter-navigation .chapter-dropdown {
+    width: 48%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.comments-section {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.comment-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.comment-list li {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+form input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .content-container {
+        width: 90%;
+    }
+
+    .chapter-navigation .prev-chapter,
+    .chapter-navigation .next-chapter,
+    .chapter-navigation .chapter-dropdown {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+/* Định dạng màu nền */
+#backgroundcolor {
+    margin-top: 10px;
+}
+
+/* Thêm vào CSS hiện tại */
+
+
+.chuong_ten123{
+    text-align: center;
+}
+
+
+
+/* Thêm vào CSS hiện tại */
+.chapter-info .prev-chapter a, .chapter-info .next-chapter a {
+    text-decoration: none;
+    color: #780000;
+    border-radius: 30px;
+    padding: 10px;
+    display: block;
+    border: 1px solid #a5a5a5;
+    margin-top: 20px;
+    font-size: 15px;
+    background: white;
+    width: 109px;
+    font-weight: 500;
+}
+#chapter-list option {
+    max-width: 30px; /* Chiều rộng tối đa của option */
+    white-space: nowrap; /* Ngăn chặn text bị xuống dòng */
+    overflow-y: auto; /* Chuyển thành cuộn chuột khi nội dung dài hơn */
+    padding: 8px;
+    background-color: #fff; /* Màu nền của option */
+    color: #333; /* Màu chữ của option */
+}
+
+    /* Hiệu ứng hover cho option */
+    #chapter-list option:hover {
+        background-color: #f5f5f5; /* Màu nền khi di chuột vào */
+    }
+#chapter-list option.selected-option {
+    background-color: #e0e0e0; /* Màu nền của option được chọn */
+    font-weight: bold; /* In đậm chữ của option được chọn */
+}
+/* ... */
+
+.chapter-info .next-chapter {
+    right: 0;
+}
+
+.chapter-info .chapter-dropdown {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.chapter-content {
+    margin: 20px 0;
+    line-height: 1.6;
+    font-family: Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;;
+    font-weight: 400;
+
+}
+.chuong_ten{
+    text-align: center;
+}
+.chapter-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+p.content-text {
+    font-size: 17px;
+    font-size: 1.2375rem;
+    font-weight: 400;
+
+
+}
+
+p.acd {
+    text-align: justify; /* Căn đều văn bản */
+    line-height: 1.7; /* Dãn dòng, có thể thay đổi giá trị này tùy theo nhu cầu */
+}
+
+.comments-section {
+    width: 100%;
+    margin-top: 100px;
+}
+
+.comment-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.comment-list li {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Form nhập bình luận */
+
+form {
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+form input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .content-container {
+        width: 97%;
+    }
+
+    .chapter-navigation .prev-chapter,
+    .chapter-navigation .next-chapter,
+    .chapter-navigation .chapter-dropdown {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* CSS cho danh sách chương */
+
+
+.li-acd {
+    flex: 0 0 33%; /* Mỗi chương chiếm 33% chiều rộng */
+    box-sizing: border-box; /* Đảm bảo padding và border không làm tăng kích thước */
+    padding: 5px; /* Tăng cách giữa các chương nếu cần */
+    white-space: nowrap; /* Ngăn chữ vượt qua chiều rộng */
+    overflow: hidden; /* Ẩn phần chữ vượt qua chiều rộng */
+  
+    border-bottom: 1px solid #ccc;
+      text-overflow: ellipsis; /* Hiển thị dấu "..." nếu chữ vượt qua chiều rộng */
+}
+
+
+
+.li-acd a:hover { 
+    color: #f39c12;
+}
+.story-items {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+
+
+.story-details {
+    flex: 1; /* Dãn tự động để lấp đầy phần còn lại của không gian trống */
+}
+
+/* Đảm bảo rằng tên truyện sẽ xuống dòng nếu dài quá */
+.story-details a {
+    text-decoration: none;
+
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%; /* Đảm bảo rằng không bao giờ tràn qua phần bên phải */
+    font-family: Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;;
+    margin-bottom: 5px;
+    color: rgb(51 65 85 / var(--tw-text-opacity));
+
+}
+
+/* Định dạng số chương đã đọc và tổng số chương */
+.story-details p {
+    margin: 0; /* Loại bỏ margin mặc định để đảm bảo cân chỉnh */
+}
+
+/* Đảm bảo rằng ảnh không bao giờ vượt qua kích thước chung */
+
+/* Thêm kiểu cho phần "Đọc tiếp" */
+.read-more {
+    float: right;
+    color: #b78a28!important; /* Màu chữ là màu xanh dương, bạn có thể điều chỉnh màu sắc theo ý muốn */
+    font-weight: 400;
+    margin-left: 10px; /* Khoảng cách giữa tên truyện và "Đọc tiếp" */
+    font-size: 10px;
+    text-decoration: none;
+    font-family: Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;;
+
+
+}
+/* Thêm các quy tắc CSS sau vào stylesheet của bạn */
+
+.jjskks11{
+    margin-top: 5px;
+}
+/* Style for dropdown items */
+.dropdown-item-eds {
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+}
+.dropdown-item-eds a {
+    text-decoration: none;
+    color: #333;
+}
+.dropdown-item-eds a:hover {
+    text-decoration: none;
+    color: #b78a28;
+}
+/* Style for dropdown content */
+.dropdown-123 {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    list-style: none;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 130px;
+
+
+}
+
+/* Style for dropdown content items */
+.dropdown-123 a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+
+}
+
+/* Hover effect for dropdown items */
+.dropdown-item-eds:active .dropdown-content {
+    display: block;
+}
+ul#moiCapNhatDropdown {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul#luotdoc-dropdown {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}ul#diemdanhgia-dropdown {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}ul#dropdown-item-eds {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul#decu-dropdown {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.dropdown-123 a:hover {
+    background-color: #b78a28;
+    color: #fff;
+
+   }
+   .main-container-eds {
+    width: 70%;
+    overflow: hidden;
+    z-index: 2;
+
+}
+
+.container-wrapper-eds {
+    display: flex;
+    box-sizing: border-box;
+}
+
+
+/* Thiết lập chiều rộng và bo tròn cho ô tìm kiếm */
+
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #b78a28!important;
+}
+
+input[type="range"] {
+    width: 100%;
+    background-color: #b78a28;
+}
+.danhgia123{
+color: #b78a28 ;
+background-color: #b78a28;
+
+}
+textarea {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.submit-button {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+/* Đặt z-index cho form đánh giá */
+.hidden-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff5dc!important;
+    z-index: 1000; /* Giá trị z-index lớn hơn các phần tử xung quanh */
+    display: none;
+    padding: 15px;
+
+}
+
+/* Thêm phần này để ẩn/mở form khi cần thiết */
+.visible {
+    display: block;
+}
+button#close-btn{
+    position: absolute;
+    top: 2px;
+    right: 40px;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #000000;
+    margin-right: -31px;
+
+}
+button.acd3 {
+    background-color: #fff;
+    border: 1px solid #f39c12;
+    border-radius: 30px;
+    color: #f39c12;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;;
+padding-left: 14px;
+padding-right: 14px;
+
+}
+p.tacgia321{
+    font-weight: 500;
+    font-family: Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;;
+float: left;
+font-size: 12px;
+}
+.story-details p {
+    font-size: 12px ;
+font-weight: 500;
+}
+a.theloai321 {
+    float: right;
+    border: 1px solid #b78a28!important;
+    color: #b78a28!important;
+    padding: 1px 5px 1px 5px;
+    margin-bottom: 5px;
+font-size: 12px;
+}
+p.trangthai321 {
+    color: #088860!important;
+    margin-top: 5px;
+    
+
+}
+i.fa-solid.fa-angles-right {
+    color: #df9135;
+    font-size: 15px;
+}
+/* Thay thế .li-acfs và .comment-avatar bằng lớp CSS hiện tại của bạn */
+
+.ul-acfs {
+    list-style: none;
+    padding: 0;
+}
+
+.li-acfs {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border:1px solid #ccc ;
+
+}
+
+.comment-avatar {
+    flex: 0 0 30px; /* Ảnh có chiều rộng 30px và không co dãn */
+    margin-right: 10px;
+}
+
+.comment-avatar img {
+    border-radius: 50%; /* Làm tròn ảnh */
+    width: 40px;
+    height: 40px;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.comment-content {
+    flex: 1; /* Ứng dụng phần còn lại của không gian trống */
+}
+
+.comment-info {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.comment-time {
+    font-size: 0.6em;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.comment-text {
+    margin-bottom: 0;
+}
+
+
+.pagination a {
+    margin: 0 5px;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #333;
+    background-color: #ddd;
+    border-radius: 4px;
+}
+
+.pagination a.active {
+    background-color: #b78a28;
+    color: #fff;
+}
+
+.nav_vc123 {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item_vc123 {
+    border-bottom:1px solid #ccc ;
+padding: 10px;
+}
+.nav-item_vc123:hover {
+background-color: #b78a28;        }
+
+
+
+.nav-item-horizontal_vc123 {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.profile-picture_vc123 {
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+
+.input-field_vc123 {
+    margin: 10px 0;
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.input-field_vc123[readonly] {
+    background-color: #f8f8f8;
+}
+
+.label_vc123 {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.update-button_vc123 {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.update-button_vc123:hover {
+    background-color: #45a049;
+}
+.avatar-container {
+    display: flex;
+    align-items: center;
+}
+
+.avatar-img {
+    width: 20px; /* Đặt kích thước ảnh đại diện */
+    height: 20px;
+    border-radius: 50%; /* Tạo hình tròn */
+    margin-right: 8px; /* Khoảng cách giữa ảnh và tên */
+    overflow: hidden; /* Ẩn phần ngoài hình tròn */
+    align-items: center;
+    margin-bottom: -3px;
+}
+i.fa-regular.fa-heart {
+    font-size: 20px;
+    color: #f73c3c;
+}
+i.fa-regular.fa-bookmark {
+    margin-left: 2px;
+    margin-top: 10px;
+    font-size: 20px;
+    color: #d8b072;
+}
+.theloai231 {
+    display: flex;
+    text-decoration: none;
+
+}
+
+.theloai-box {
+    text-decoration: none;
+    border: 1px solid #b78a28!important;
+    color: #b78a28!important;
+    border-radius: 5px;
+    padding: 5px 15px; /* Điều chỉnh độ lớn của box */
+}
+.trangthai-box{
+    text-decoration: none;
+    border: 1px solid red!important;
+    color: red!important;
+    border-radius: 5px;
+    padding: 5px 15px; /* Điều chỉnh độ lớn của box */
+}
+
+.acd-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    margin-top: 25px;
+}
+
+
+
+.acd-number {
+    font-weight: 600;
+    font-size: 19px;
+    margin-bottom: 4px;
+}
+
+span#tongdiem-value-123 {
+    margin-left: 15px;
+    font-weight: 500;
+}
+
+.star-container-123 {
+    align-items: center;
+    margin-left: 28px;
+    font-size: 12px;
+}
+/* CSS để ẩn phần cài đặt */
+/* CSS cho settings-icon */
+
+select#fontsize {
+    width: 100px;
+}
+a.tentieude {
+    text-decoration: none;
+    color: #666;
+}
+.line {
+    padding: 24px 0 0;
+    border-top: 3px dashed #e0d9d6;
+}
+.site-animation {
+    text-align: center;
+    padding-bottom: 10px;
+}
+.wrapper-heading-home-instagram {
+    padding-bottom: 0px !important;
+    font-family: 'Oswald' !important;
+    width: 100%;
+    font-size: 5.85vw;
+    height: auto!important;
+    overflow: hidden;
+    text-transform: uppercase;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-fill-color: hsl(0deg 0% 100%);
+}
+
+.story-details-123 a {
+    text-decoration: none;
+
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%; /* Đảm bảo rằng không bao giờ tràn qua phần bên phải */
+    font-family: Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;;
+}
+/* Điều chỉnh kiểu dáng cho màn hình di động */
+/* CSS */
+.tomtat_v1 {
+    display: block; /* Fallback for browsers that do not support line clamping */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 3em; /* Adjust max-height to fit the line-height * number of lines you want to show */
+    line-height: 1.5em; /* Adjust line-height as needed */
+    font-size: 14px;
+}
+
+/* Fallback for browsers that do not support line clamping */
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+    .tomtat_v1 {
+        display: block;
+        position: relative;
+        max-height: 3em; /* Twice the line-height to show 2 lines */
+        overflow: hidden;
+        padding-right: 1em; /* Space for ellipsis */
+    }
+    .tomtat_v1::before {
+        content: "...";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    .tomtat_v1::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        width: 1em;
+        height: 1em;
+        margin-top: 0.2em;
+        background: white;
+    }
+}
+@keyframes sparkling {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .gold-value {
+    animation: sparkling 3s linear infinite;
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-clip: text;
+    
+    /* Gradient Colors */
+    background-image: linear-gradient(45deg, #f6d365, #fda085, #f6d365, #fda085, #f6d365);
+  }
+  i.fa-solid.fa-key {
+    color: #bbba00;
+}
+.star-container {
+    padding: 10px;
+}
+input#submit-comment {
+    background: #7caa4582;
+    border-radius: 5px;
+    padding: 5px;
+    color: #685d1f;
+    border: navajowhite;
+}
+ul.nav_vc123 a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* Đặt quy tắc CSS cho các thiết bị có chiều rộng lớn hơn 768px */
+@media (min-width: 969px) {
+    .nav-mobile {
+        display: none;
+    }
+}
+
+
+/* Đặt quy tắc CSS cho các thiết bị có chiều rộng nhỏ hơn hoặc bằng 768px */
+@media (max-width: 968px) {
+    .nav-list {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        /* Thêm các quy tắc CSS khác nếu cần */
+    }
+    
+    .nav-mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* Thêm các quy tắc CSS khác nếu cần */
+    }
+    .site-header {
+        background-color: rgba(51,34,0,.05);
+        color: #fff;
+        height: 50px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+    
+    .logo {
+        flex-grow: 1;
+        text-align: center;
+    }
+    
+    .logo img {
+        width: 45px;
+        height: 100%;
+        display: inline-block;
+    }
+    
+    .main-nav {
+        margin: auto;
+    }
+    
+
+
+.weekly-stories .column {
+    margin-top: 40px;
+}
+
+
+.weekly-list {
+    padding: 0;
+    list-style: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.weekly-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+    border-top:  2px dashed #e0d9d6
+}
+
+.weekly-item p {
+    margin: 0;
+}
+
+.weekly-item a {
+    text-decoration: none;
+    color: #333;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.top-1-info a{
+    font-size: 14px;
+}
+.container {
+
+    background-color: white;
+
+}
+
+
+
+
+
+/* Thêm kiểu danh sách hoặc các kiểu trình bày phù hợp cho nội dung của bạn */
+/* Thêm kiểu danh sách hoặc các kiểu trình bày phù hợp cho nội dung của bạn */
+
+
+.recommended-stories {
+    margin-top: 20px;
+}
+
+.story-row {
+    flex-wrap: wrap;
+
+}
+
+.story-item {
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #ccc;
+padding: 3px;
+    overflow: hidden;
+    display: flex;
+    gap: 10px;
+}
+
+
+
+.story-thumbnail img {
+    width: 40px; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng của vùng hiển thị */
+}
+
+.story-details {
+    width: 70%; /* Chiếm 70% chiều rộng của mỗi mục truyện */
+
+}
+
+
+
+.read-stories {
+    margin-top: 35px;
+}
+
+.story-rows {
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.story-items {
+    width: 100%; /* Chiếm toàn bộ chiều rộng của mỗi mục truyện */
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    gap: 15px;
+}
+
+
+
+.story-thumbnail img {
+    width: 70px; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng của vùng hiển thị */
+}
+
+.story-details {
+    width: 70%; /* Chiếm 70% chiều rộng của mỗi mục truyện */
+}
+
+.story-details h4 {
+    margin-top: 0;
+}
+
+.new-stories-abc {
+    /* Thêm kiểu danh sách hoặc các kiểu trình bày phù hợp cho nội dung của bạn */
+    list-style: none;
+    padding: 0;
+}
+
+.story-item-c {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc; /* Thêm đường kẻ giữa các truyện */
+    padding-bottom: 10px; /* Thêm khoảng cách dưới mỗi truyện */
+}
+
+.story-details-abc {
+    width: calc(100% - 20px); /* Chiếm phần lớn chiều rộng, trừ đi khoảng cách giữa các truyện */
+    padding-left: 20px; /* Khoảng cách giữa ảnh và thông tin truyện */
+}
+
+.story-details-abc h4 {
+    margin-top: 0;
+}
+.story-details-abc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 20px); /* Chiếm phần lớn chiều rộng, trừ đi khoảng cách giữa các truyện */
+    padding-left: 20px; /* Khoảng cách giữa ảnh và thông tin truyện */
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.story-details-abc h4 {
+    margin-top: 0;
+}
+
+.story-details-abc p {
+    margin: 0;
+}
+main {
+    position: relative;
+    z-index: 2; /* Đặt z-index lớn hơn so với phần tử span */
+}
+.nav-item-search-box {
+    display: flex;
+    align-items: center;
+
+}
+
+/* Thiết lập kiểu dáng cho ô nhập liệu tìm kiếm */
+.timkiem {
+    width: 200px;
+    padding: 10px;
+    border: none;
+    border-radius: 30px 0 0 30px;
+    outline: none;
+}
+
+/* Thiết lập kiểu dáng cho nút tìm kiếm */
+.button-timkiem {
+    border: none;
+    color: #b78a28!important;
+    cursor: pointer;
+    border: none;
+}
+
+/* Hover effect cho nút tìm kiếm */
+.search-input {
+    width: 100%; /* Đặt chiều rộng là 100% của lớp chứa */
+    box-sizing: border-box; /* Đảm bảo padding và border không làm tăng kích thước tổng thể */
+    /* Các định dạng khác cho .search-input */
+}
+
+.search-container {
+    /* Đảm bảo lớp chứa .search-input không có padding hoặc margin làm thay đổi kích thước thực tế */
+    box-sizing: border-box; /* Đảm bảo padding và border không làm tăng kích thước tổng thể */
+    /* Các định dạng khác cho .search-container */
+    margin: 10px 0 10px 0;
+}
+
+.search-input {
+
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-timkiem {
+    padding: 10px;
+    cursor: pointer;
+    background: none;
+}
+
+/* Thiết lập kiểu dáng cho placeholder trong ô nhập liệu */
+.timkiem::placeholder {
+    color: #555; /* Màu chữ của placeholder */
+    opacity: 0.7; /* Độ mờ của placeholder */
+}
+
+.review-container {
+    border-radius: 8px;
+    width: 100%; /* Điều chỉnh kích thước container theo mong muốn */
+    margin: auto;
+    background-color: #fff5dc!important;
+}
+.site-header.expanded {
+    height: 100px; /* Chiều cao mới khi .search-container được hiển thị */
+}
+button.nav-button {
+    border: none;
+    background: none;
+}
+i.fa-solid.fa-bars {
+    font-size: 22px;
+    color: #b78a28 !important;
+}
+/* Định dạng cho menu bar */
+.nav-lists {
+    
+    position: fixed; /* Đặt menu cố định so với viewport */
+    top: 0; /* Căn đỉnh menu với đỉnh viewport */
+    right: -100%; /* Ban đầu đặt menu ngoài phạm vi nhìn thấy bên phải */
+    width: 80%; /* Chiếm 80% chiều rộng của màn hình */
+    height: 100%; /* Chiều cao bằng với màn hình */
+    background-color: #f9f9f9; /* Màu nền cho menu */
+    overflow-y: auto; /* Cho phép cuộn nếu nội dung dài */
+    transition: right 0.8s; /* Thêm hiệu ứng chuyển động mượt mà khi hiện/ẩn */
+    
+    z-index: 999; /* Đảm bảo menu nằm trên các phần tử khác */
+    
+}
+
+
+/* Định dạng cho các mục trong menu */
+.nav-lists ul {
+    list-style: none; /* Loại bỏ bullet points */
+    padding: 0; /* Loại bỏ padding mặc định */
+    margin: 0; /* Loại bỏ margin mặc định */
+}
+
+.nav-lists li {
+    border-bottom: 1px solid #eaeaea; /* Đường kẻ ngăn cách các mục */
+}
+
+.nav-lists li:last-child {
+    border-bottom: none; /* Loại bỏ đường kẻ ở mục cuối cùng */
+}
+
+.nav-lists li a {
+    text-decoration: none; /* Loại bỏ gạch chân của liên kết */
+    color: #8b4a4a; /* Màu chữ cho liên kết */
+    display: block; /* Liên kết chiếm toàn bộ không gian của mục */
+    padding: 15px;
+    font-weight: 500;
+}
+
+/* Khi menu được hiển thị, cập nhật thuộc tính right để nó hiện ra từ bên phải */
+.nav-lists.show {
+    right: 0; /* Di chuyển menu vào trong viewport */
+}
+
+/* Định dạng cho nút đóng menu (nếu bạn có) */
+
+
+.close-nav {
+    font-size: 30px;
+    cursor: pointer;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: none;
+    padding: 0;
+    line-height: 1;
+    padding: 10px 0px 10px 10px;
+}
+.theh {
+    text-align: center;
+    font-family: 'Oswald' !important;
+font-weight: 500;
+text-align: center;
+}
+.thehh {
+    font-family: 'Oswald' !important;
+font-weight: 500;
+text-align: center;
+
+
+}
+
+.story-rows td {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.story-left {
+    flex: 80%; /* Chiếm 80% chiều rộng của hàng */
+    margin-right: 10px; /* Khoảng cách phải giữa story-left và story-right */
+}
+
+.story-right {
+    flex: 20%; /* Chiếm 20% chiều rộng của hàng */
+    text-align: right;
+}
+
+.story-title, .story-details {
+    margin-bottom: 5px;
+}
+.story-detailss{
+    display: flex;
+    gap: 30px;
+}
+.story-list-abc a {
+    text-decoration: none;
+    color: #000000;
+    text-transform: capitalize;
+    font-size: 13px;
+    font-weight: 600;
+}
+.story-author {
+    font-size: 11px;
+    color: #000000;
+    font-weight: 600;
+}
+.story-genre{
+    font-size: 11px;
+    color: #b56e6e;
+}
+.story-chapter a{
+    color: #d38500;
+    font-weight: 600;
+
+}
+.story-title {
+    white-space: nowrap; /* Ngăn không cho dòng văn bản bị ngắt trên dòng */
+    overflow: hidden; /* Ẩn nội dung bị tràn ra ngoài */
+    text-overflow: ellipsis; /* Hiển thị dấu ba chấm (...) khi nội dung bị ẩn đi */
+    max-width: 300px; /* Giới hạn chiều rộng tối đa của story-title */
+}
+a.tieude {
+    white-space: nowrap; /* Ngăn không cho dòng văn bản bị ngắt trên dòng */
+    overflow: hidden; /* Ẩn nội dung bị tràn ra ngoài */
+   
+   font-size: 14px;
+    text-overflow: ellipsis; /* Hiển thị dấu ba chấm (...) khi nội dung bị ẩn đi */
+    max-width: 230px; /* Giới hạn chiều rộng tối đa của story-title */
+}
+
+
+.maytinh {
+    display: none;
+}
+
+/* Hiển thị các hàng dành cho điện thoại */
+.story-rows {
+    display: table-row;
+}
+.containers-acd {
+
+    background-color: #fff;
+}
+
+.truyen-image-acd {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.truyen-info-acd {
+    flex: 7; /* 70% chiều rộng */
+}
+
+.truyen-image-acd img {
+    max-width: 100%; /* Ảnh không vượt quá phần tử chứa */
+    height: 240px;}
+
+/* Styling for Buttons */
+.buttons-acd button {
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid #007bff;
+    border-radius: 24px;
+    cursor: pointer;
+    width: auto;
+
+}
+
+.buttons-acd button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+h2.acd {
+    text-align: left;
+    font-family: 'Oswald' !important;
+    font-weight: 500
+}
+a.nav-link {
+    padding-top: 1.8em;
+    padding-bottom: 1.8em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+a.nav-link:hover {
+background-color: #ccc;
+}
+
+.container-mt-5 {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
+}
+
+h2 {
+    text-align: center;
+    color: #b2b2b2;
+}
+
+form {
+    margin-top: 20px;
+}
+
+.form-group-123 {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input.form-control-123 {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button.btn-btn-primary123 {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button-btn-primary123:hover {
+    background-color: #0056b3;
+}
+.container-fluid {
+    min-height: 800px;
+}
+
+.nav-tabs {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.nav-item-axc {
+    margin:auto;
+}
+
+.nav-link-axc {
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid #162b54;
+    border-radius: 5px;
+    color: #162b54;
+    background-color: #ffffff;
+    cursor: pointer;
+    font-family: 'Inter' !important;
+        font-weight: 600;
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+    background-color: #ffffff !important;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.nav-item-axc:hover .nav-dropdown {
+    display: block;
+}
+p.acd{
+    font-size: 15px;
+    font-family: 'Inter' !important;
+    font-weight: 400;
+
+}
+a.acd{
+    font-size: 15px;
+    font-family: 'Inter' !important;
+    font-weight: 600;
+    text-decoration: none;
+    color: #000000;
+
+}
+h2.acd{
+font-family: 'Inter' !important;
+font-weight: 600;
+color: #000000;
+text-transform: capitalize;
+text-align: center;
+}
+.buttons-acd {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.buttons-acd a {
+    display: block;
+    padding: 10px 25px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.acd1 {
+    background-color: #bf2c24;
+    border-color: #bf2c24;
+}
+a.acd1 {
+    font-family: 'Inter' !important;
+    font-weight: 600;
+    color: #fff;    
+    width: auto;
+}
+
+.acd2 {
+    background-color: #ffffff;
+    border: 1px solid #8a8282;
+
+}
+.acd2:hover {
+    background-color: #7a7a7a;
+    color: #fff;    
+
+}
+
+.acd1:hover {
+    background-color: #cc5252;
+    color: #fff;    
+
+}
+a.acd2 {
+    font-family: 'Inter' !important;
+    font-weight: 600;
+    color: #595858;    
+}
+.acd3 {
+    border: 1px solid #f39c12;
+}
+a.acd3 {
+    font-family: 'Inter' !important;
+    font-weight: 600;
+    color: #f39c12;    
+}
+.acd3:hover {
+    background-color: #f39c12;
+    color: #fff;    
+
+}
+.acd4 {
+    background-color: #a5a303;
+}
+a.acd4 {
+    font-family: 'Inter' !important;
+    font-weight: 600;
+    color: #ffffff;    
+}
+.acd4:hover {
+    background-color: #cc5252;
+    color: #fff;    
+
+}
+.buttons-acd a i {
+    margin-right: 5px;
+}
+    /* Định dạng phần cài đặt */
+    #settingsPanel {
+        position: absolute;
+        width: 90%;
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        z-index: 1000;
+        background-color: #fff;
+        border-radius: 8px;
+    }
+.top-bg-op-box {
+    z-index: 1;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    display: block;
+    content: "";
+}
+.status-theloai {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.acd-item {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    width: 100%;
+    align-items: center;
+}
+.author-rating-container {
+    display: flex;
+    margin: 28px 0 25px 0;
+    justify-content: center;
+}
+.fkdkfdk2 {
+    display: none;
+}
+.ul-acd {
+   
+    flex-direction: row;
+    justify-content: center; /* Giữa theo chiều ngang */
+    padding: 0;
+    list-style-type: none;
+}
+
+.li-acd {
+    margin: 5px;
+}
+
+.li-acd a {
+    display: flex;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    align-items: center;
+
+    width: 100%; /* Đặt chiều rộng cố định */
+}
+.li-acd p {
+    display: block;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    width: 100%; /* Đặt chiều rộng cố định */
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0;
+    text-overflow: ellipsis;
+}
+.chapter-info .chapter-dropdown select {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 13px;
+    box-sizing: border-box;
+    margin-top: 70px;
+}
+.chapter-info .prev-chapter,
+.chapter-info .next-chapter {
+    top: 0;
+    width: auto;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    position: absolute;
+}
+.chapter-info {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+}
+.content-text {
+    font-size: 18px;
+
+}
+/* Style cho modal */
+.modal {
+    display: none; /* Ẩn modal */
+    position: fixed;
+    z-index: 1; /* Đặt modal trên cùng */
+    left: 0;
+    top: 0;
+    width: 100%; /* Chiều rộng đầy đủ */
+    height: 100%; /* Chiều cao đầy đủ */
+    overflow: auto; /* Cho phép cuộn nếu cần */
+    background-color: rgb(0,0,0); /* Màu nền */
+    background-color: rgba(0,0,0,0.4); /* Màu nền có độ mờ */
+}
+
+/* Style cho nội dung bên trong modal */
+.modal-content {
+    background-color: #ffffff;
+    width: 100%; /* Chiều rộng của modal content */
+    height: 100%;
+    padding: 1px;
+}
+
+/* Style cho nút đóng */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.additional-info-list-eds {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ccc;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.mobile-filter-menu {
+    display: flex;
+    padding: 10px;
+    background: #f4f4f4;
+    border: 1px solid #ccc;
+}
+i#mobileFilterToggle {
+    font-size: 20px;
+    color: #b78a28;
+}
+
+.jfsdjfj {
+    display: flex;
+    position: relative;
+}
+.iljdjld {
+    width: 95%;
+    margin: auto;
+}
+
+
+.fkdjf432 li {
+    flex: 0 0 auto; /* Các mục li không co giãn và có chiều rộng tự động */
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Đảm bảo các mục dropdown cũng có thể cuộn ngang nếu cần */
+.dropdown-123 {
+    white-space: nowrap; /* Ngăn các mục dropdown từ việc xuống dòng */
+    overflow-x: auto; /* Cho phép cuộn ngang nếu mục con quá dài */
+}
+.dropdown-123 {
+    position: absolute; /* Cho phép đè lên các nội dung khác */
+    top: 100%; /* Đặt ngay dưới container */
+    left: 0;
+    z-index: 1000; /* Đảm bảo nằm trên các thành phần khác */
+    white-space: nowrap;
+    overflow-x: auto; /* Cho phép cuộn ngang nếu cần */
+
+}
+
+
+
+
+.filter-list-eds {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filter-item-eds {
+    margin-bottom: 10px;
+}
+
+.filter-list-eds a {
+    text-decoration: none;
+    color: #666;
+    display: block;
+    padding: 8px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #666;
+    border-radius: 5px;
+    font-size: 11px;
+    font-family: Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;;
+
+}
+
+.filter-list-eds a:hover {
+    background-color: #666;
+    color: #ffffff;
+
+}
+
+.selected-category-eds {
+    border-bottom: 1px solid #ccc;
+}
+
+.selected-keywords-eds {
+    margin-top: 10px;
+}
+
+.result-item-eds {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.additional-info-container-eds {
+display: flex;
+}
+
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.additional-info-list-eds li:hover {
+color: #b78a28;
+
+}
+
+
+.weekly-item {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.fa-medal {
+    color: rgb(255, 128, 0);
+    font-size: 20px;
+}
+
+
+.weekly-item p {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;;
+    
+}
+
+.tieudetruyen {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    text-transform: capitalize;
+    display: block; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; 
+}
+.tieudetruyena {
+    text-decoration: none;
+    color: #ccc;
+    text-transform: capitalize;
+    display: block; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; 
+}
+.tieudetruyena:hover {
+    color: #b78a28;
+}
+.tieudetruyen:hover {
+    color: #b78a28;
+}
+.tenuser {
+    font-size: 14px;
+    color: #666;
+}
+
+.luotdoc {
+    font-size: 14px;
+    color: #888;
+}
+.top-1-info {
+    text-align: left;
+    line-height: 2;
+}
+.dropdown-menu {
+    display: none;
+}
+.nav-item234 .dropdown-menu {
+    flex-wrap: wrap;
+    max-height: 440px; /* chiều cao tối đa cho 10 thể loại, điều chỉnh tùy theo kích thước thực tế của các thể loại */
+    overflow: hidden;
+}
+
+.nav-item234 .dropdown-menu li {
+    width: calc(100% / 2); /* Đây là để chia thành 2 cột, điều chỉnh số cột bằng cách thay đổi mẫu phần trăm */
+    break-inside: avoid-column;
+    page-break-inside: avoid;
+    box-sizing: border-box;
+}
+
+.dropdown-menu a {
+    padding: 10px;
+    display: block; /* Đảm bảo mỗi thể loại chiếm toàn bộ chiều rộng của 'li' */
+    text-decoration: none; /* Loại bỏ gạch chân của liên kết nếu có */
+    color: #000000; /* Màu của text, thay đổi tùy ý */
+    font-size: 13px; /* Kích thước font, thay đổi tùy ý */
+    font-family: 'Oswald', sans-serif; /* Font chữ, thay đổi tùy ý */
+    font-weight: 400;
+}
+
+.rotate-icon {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease; /* Smooth transition for the rotation */
+}
+i.fa-solid.fa-chevron-down {
+    margin-left: 50px;
+}
+
+.no-scroll {
+    overflow: hidden;
+    height: 100%; /* Hoặc sử dụng 100vh cho full height */
+}
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.footer-section {
+    flex: 1;
+    margin-left: 5%;
+}
+
+.footer-section h3 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+.footer-section h3{
+    font-size: 15px;
+}
+.footer-section ul {
+    padding: 0;
+}
+.footer-section a {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.social-icons {
+    display: flex;
+    padding: 0;
+}
+.social-icons li {
+    display: flex;
+    padding: 0;
+}
+.social-icons li {
+    margin-right: 10px;
+    list-style: none;
+
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 13px;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.container_vc123 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.left-column_vc123, .right-column_vc123 {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.right-column_vc123 {
+    width: 100%;
+}
+
+/* Hiển thị menu dropdown khi di chuột qua */
+
+/* Định dạng icon mũi tên */
+.fa-chevron-down {
+    margin-left: 5px;
+}
+.column-20 {
+    width: auto;
+}
+i.fa-solid.fa-magnifying-glass {
+    font-size: 17px;
+}
+form#danhGiaForm {
+    width: 80%;
+}
+/* CSS code */
+.container-mt-4 {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.nav-tabs {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    justify-content: space-between;
+}
+
+.nav-item-axc {
+    flex: 1;
+}
+
+.nav-link-axc {
+    display: block;
+    text-align: center;
+    padding: 8px;
+    color: black;
+    text-decoration: none;
+}
+
+.nav-link-axc:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+
+
+.settings-panel {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+.settings-panel label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.settings-panel select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid #cccccc;
+}
+
+/* Cải thiện giao diện cho các option có background color */
+.settings-panel select option {
+    padding: 10px;
+}
+
+.settings-icon , .chapter-icon , .bookmark-icon {
+    cursor: pointer;
+    width: 100px;
+    background-color: #5db85c; /* Màu nền xám */
+    color: #fff; /* Màu chữ trắng */
+    text-align: center;
+    line-height: 30px; /* Điều chỉnh line-height để canh giữa nếu cần */
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 3px;
+}
+
+.settings-icon i {
+    margin-right: 5px; /* Khoảng cách giữa biểu tượng và văn bản */
+}
+.settings-menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    margin-top: 95px;
+    
+}
+
+.chapter-info {
+    text-align: justify;
+    background-color: #ffffff;
+    border-radius: 5px;
+
+}
+.content-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.chapter-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    overflow-y: auto;
+}
+
+.chapter-modal-content {
+    background: white;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.chapter-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.chapter-list li {
+    margin-bottom: 10px;
+}
+
+.chapter-list li a {
+    text-decoration: none;
+    color: black;
+}
+
+.chapter-list li a:hover {
+    color: blue;
+}
+.top-1-image {
+    position: relative;
+    width: 150px; /* Hoặc bất kỳ kích thước nào bạn muốn */
+    display: inline-block; /* Để hình ảnh được hiển thị inline và có thể đặt kích thước */
+}
+
+.top-1-image img {
+    width: 100%;
+    height: auto;
+    display: block; /* Loại bỏ khoảng trắng dưới ảnh */
+}
+.comment-avatar img {
+    width: 30px; /* Kích thước của avatar */
+    height: 30px; /* Đảm bảo avatar là hình tròn */
+    border-radius: 50%; /* Làm tròn hình ảnh */
+    object-fit: cover; /* Đảm bảo ảnh không bị méo */
+  }
+  
+  /* Style cho nội dung bình luận */
+  .comment-content {
+    flex: 1;
+    padding-left: 15px;
+  }
+  
+  .comment-info {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .comment-time {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 5px;
+  }
+  
+  .comment-text {
+    margin-top: 10px;
+    line-height: 1.5;
+    color: #444;
+  }
+/* Style cho form bình luận */
+#comment-form {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  #comment-form label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  #comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-family: Arial, sans-serif;
+  }
+  
+  #comment-form input[type="button"] {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  
+  #comment-form input[type="button"]:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style cho thông báo đăng nhập */
+  #login-prompt {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ffffe0;
+    border-left: 4px solid #ffc107;
+    border-radius: 4px;
+  }
+  
+  #login-prompt a {
+    color: #0056b3;
+    text-decoration: none;
+  }
+  
+  #login-prompt a:hover {
+    text-decoration: underline;
+  }
+
+  .nav-item-axc {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .nav-item-axc .badge {
+    position: absolute;
+    top: -10px;
+    right: -4px;
+    background-color: #B78A28;
+    color: white;
+    padding: 5px 5px;
+    min-width: 13px;
+        border-radius: 50%;
+  }
+p.copyright{
+    font-size: 13px;
+}
+#settingsPanel {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 70%; /* Chiều rộng của bảng điều khiển cài đặt */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+/* Cấu hình chung cho màn hình máy tính và điện thoại */
+.chapter-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.chapter-item {
+    box-sizing: border-box;
+    padding: 10px;
+    cursor: pointer;
+    display: block;
+    margin-top: 8px;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+}
+
+.chapter-item:hover {
+    background-color: #f7f7f7;
+}
+
+/* Cấu hình cho màn hình máy tính (chiều rộng lớn hơn 768px) */
+
+
+/* Cấu hình cho màn hình điện thoại (chiều rộng dưới 768px) */
+@media (max-width: 969px) {
+    .chapter-item {
+        width: 100%; /* Toàn bộ chiều rộng cho màn hình điện thoại */
+    }
+}
+
+/* Một số cấu hình khác giống như bạn đã cung cấp cho modal và nội dung modal */
+
+i.fa-regular.fa-trash-can {
+    color: black;
+}
+/* CSS cho máy tính (độ rộng từ 769px trở lên) */
+
+.weekly-item img {
+    max-width: 70px;
+    margin-left: auto;
+
+}
+.weekly-items {
+    display: flex;
+    gap: 10px;
+    margin-left: 15px;
+}
+
+
+.weekly-items222 {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 5px;
+    border-top: 2px dashed #e0d9d6;
+}
+.tieudetruyena {
+    text-decoration: none;
+    color: #000;
+    text-transform: capitalize;
+    display: block;
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Quy tắc CSS cho màn hình máy tính (desktop) */
+@media (min-width: 769px) {
+    .nav-item-axc {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .nav-item-axc .badge {
+        background-color: #B78A28;
+        color: white;
+        padding: 5px;
+        font-size: 12px;
+        border-radius: 50%;
+        min-width: 13px;
+    }
+
+    
+    .mobile-top-bar,
+    .mobile-filter-menu {
+        display: none; /* Ẩn các class liên quan đến điện thoại trên màn hình máy tính */
+    }
+
+    /* Khôi phục lại hiển thị các phần tử filter mà bạn muốn hiển thị trên desktop */
+    .filter-options {
+        display: block;
+    }
+.close-nav{
+    display: none; /* Ẩn các class liên quan đến điện thoại trên màn hình máy tính */
+
+}
+    /* Các quy tắc CSS khác dành cho desktop */
+    .container_vc123 {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        margin-top: 180px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    }
+    
+    .left-column_vc123, .right-column_vc123 {
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+}
+
+/* Quy tắc CSS cho màn hình điện thoại */
+@media (max-width: 768px) {
+    /* Các quy tắc đã được định nghĩa trước đó để hiển thị menu trên điện thoại */
+    .mobile-top-bar {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .mobile-filter-menu {
+        display: flex;
+        padding: 8px;
+        /* Các quy tắc khác cho mobile */
+    }
+
+    .additional-filter-options {
+        display: flex;
+        flex-grow: 1;
+        justify-content: flex-end;
+        padding: 10px;
+    }
+
+    .filter-options {
+        display: none; /* Ẩn các thành phần filter mặc định trên điện thoại */
+    }
+    .filter-container-eds{
+        display: none;
+    }
+    .left-column_vc123 {
+        display: none;
+    }
+    .fkdjf432{
+        display: none;
+        
+    }
+}
+
+
+
+/* Đối với thiết bị có chiều rộng lớn (máy tính để bàn) */
+@media (min-width: 969px) {
+    i#mobileFilterToggle {
+    display: none;
+}
+
+.modal{
+    display: none;
+}
+    .site-header {
+        background-color: rgba(51,34,0,.05);
+        color: #fff;
+        height: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+    
+    .logo {
+        flex-grow: 1;
+        text-align: center;
+    }
+    
+    .logo img {
+        width: 55px;
+        height: 100%;
+        display: inline-block;
+    }
+    
+    .main-nav {
+        margin: auto;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+    
+.weekly-stories {
+    display: flex;
+    justify-content: space-between;
+}
+
+.weekly-stories .column {
+    margin-top: 40px;
+    width: 32%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+}
+
+
+.weekly-list {
+    padding: 0;
+    list-style: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+.tab-content {
+    width: 75%;
+    margin: auto;
+    max-width: 1200px;
+}
+
+
+.weekly-item p {
+    margin: 0;
+}
+
+.weekly-item a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    background-color: white;
+    margin-top: 220px;
+    min-height: 500px;
+}
+
+
+.column-80 {
+    width: 70%;
+ 
+    
+}
+
+.column-20 {
+    width: 25%;
+}
+
+
+
+/* Thêm kiểu danh sách hoặc các kiểu trình bày phù hợp cho nội dung của bạn */
+/* Thêm kiểu danh sách hoặc các kiểu trình bày phù hợp cho nội dung của bạn */
+.main-content {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+
+.column-80 {
+    width: 70%;
+}
+
+
+
+.story-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.story-item {
+    width: 48%; /* 48% để có khoảng cách giữa các mục truyện */
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #ccc;
+padding: 3px;
+    overflow: hidden;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+
+
+.story-thumbnail img {
+    width: 40px; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng của vùng hiển thị */
+}
+
+.story-details {
+    width: 70%; /* Chiếm 70% chiều rộng của mỗi mục truyện */
+
+}
+
+
+
+
+.read-stories {
+    margin-top: 35px;
+}
+
+.story-rows {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.story-items {
+    width: 100%; /* Chiếm toàn bộ chiều rộng của mỗi mục truyện */
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    gap: 10px;
+}
+
+.story-thumbnail {
+    width: 20%; 
+
+}
+
+.story-thumbnail img {
+    width: 100%;
+    max-width: 70px; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng của vùng hiển thị */
+    border-radius: 5px;
+}
+
+.story-details {
+    width: 70%; /* Chiếm 70% chiều rộng của mỗi mục truyện */
+}
+
+.story-details h4 {
+    margin-top: 0;
+}
+
+.new-stories-abc {
+    /* Thêm kiểu danh sách hoặc các kiểu trình bày phù hợp cho nội dung của bạn */
+    list-style: none;
+    padding: 0;
+}
+
+.story-item-c {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc; /* Thêm đường kẻ giữa các truyện */
+    padding-bottom: 10px; /* Thêm khoảng cách dưới mỗi truyện */
+}
+
+.story-details-abc {
+    width: calc(100% - 20px); /* Chiếm phần lớn chiều rộng, trừ đi khoảng cách giữa các truyện */
+    padding-left: 20px; /* Khoảng cách giữa ảnh và thông tin truyện */
+}
+
+.story-details-abc h4 {
+    margin-top: 0;
+}
+.story-details-abc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 20px); /* Chiếm phần lớn chiều rộng, trừ đi khoảng cách giữa các truyện */
+    padding-left: 20px; /* Khoảng cách giữa ảnh và thông tin truyện */
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.story-details-abc h4 {
+    margin-top: 0;
+}
+
+.story-details-abc p {
+    margin: 0;
+}
+
+main {
+    position: relative;
+    z-index: 2; /* Đặt z-index lớn hơn so với phần tử span */
+    padding: 1px 0;
+}
+.nav-item-search-box {
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+/* Thiết lập kiểu dáng cho ô nhập liệu tìm kiếm */
+.timkiem {
+    width: 200px;
+    padding: 10px;
+    border: none;
+    border-radius: 30px 0 0 30px;
+    outline: none;
+}
+
+/* Thiết lập kiểu dáng cho nút tìm kiếm */
+.button-timkiem {
+    padding: 10px;
+    background-color: #ffffff; /* Màu nền của nút tìm kiếm */
+    border: none;
+    border-radius: 0 30px 30px 0;
+    color: #b78a28!important;
+    cursor: pointer;
+}
+
+/* Hover effect cho nút tìm kiếm */
+
+
+/* Thiết lập kiểu dáng cho placeholder trong ô nhập liệu */
+.timkiem::placeholder {
+    color: #555; /* Màu chữ của placeholder */
+    opacity: 0.7; /* Độ mờ của placeholder */
+}
+.search-container {
+    margin-top: 20px;
+    margin: 10px 0 10px 0;
+
+}
+.review-container {
+    border-radius: 8px;
+    width: 100%; /* Điều chỉnh kích thước container theo mong muốn */
+    margin: auto;
+    background-color: #fff5dc!important;
+}
+
+
+.maytinh {
+    display: table-row;}
+
+/* Hiển thị các hàng dành cho điện thoại */
+.story-rows {
+    display: none;
+}
+.weekly-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-top:  2px dashed #e0d9d6;
+    flex-wrap: wrap;
+}
+
+
+
+.containers-acd {
+    max-width: 1200px;
+    width: 70%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    border-radius: 21px;
+    margin-top: 200px;
+    gap: 20px;
+}
+
+.truyen-image-acd {
+    flex: 2.4; /* 30% chiều rộng */
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.truyen-info-acd {
+    flex: 7; /* 70% chiều rộng */
+}
+
+.truyen-image-acd img {
+    max-width: 220px;
+    width: auto;
+}
+/* Styling for Buttons */
+.buttons-acd button {
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid #007bff;
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+.buttons-acd button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+h2.acd {
+    text-align: left;
+    font-family: 'Oswald' !important;
+    font-weight: 500
+}
+a.nav-link {
+    padding-top: 1.8em;
+    padding-bottom: 1.8em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+a.nav-link:hover {
+background-color: #ccc;
+}
+
+.container-mt-5 {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
+}
+
+h2 {
+    text-align: center;
+    color: #b2b2b2;
+}
+
+form {
+    margin-top: 20px;
+}
+
+.form-group-123 {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input.form-control-123 {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button.btn-btn-primary123 {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button-btn-primary123:hover {
+    background-color: #0056b3;
+}
+.container-fluid {
+    min-height: 800px;
+}
+.container-mt-4 {
+    width: 70%;
+    margin: 0 auto;
+    max-width: 1200px;
+    
+}
+.nav-tabs {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    position: relative;
+}
+
+.nav-item-axc {
+    margin-right: 15px;
+}
+
+.nav-link-axc {
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid #162b54;
+    border-radius: 5px;
+    color: #162b54;
+    background-color: #ffffff;
+    cursor: pointer;
+    font-family: 'Inter' !important;
+        font-weight: 600;
+    text-transform: uppercase;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+    background-color: #f2f0eb !important;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.nav-item-axc:hover .nav-dropdown {
+    display: block;
+}
+p.acd{
+    font-size: 15px;
+    font-family: 'Inter' !important;
+    font-weight: 400;
+
+}
+a.acd{
+    font-size: 15px;
+    font-family: 'Inter' !important;
+    font-weight: 600;
+    text-decoration: none;
+    color: #000000;
+
+}
+h2.acd{
+font-family: 'Inter' !important;
+font-weight: 600;
+color: #000000;
+text-transform: capitalize;
+}
+.buttons-acd {
+    display: flex;
+    gap: 10px;
+}
+
+.buttons-acd a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.acd1 {
+    background-color: #bf2c24;
+    border-color: #bf2c24;
+}
+a.acd1 {
+    font-family: 'Inter' !important;
+    font-weight: 600;
+    color: #fff;    
+}
+
+.acd2 {
+    background-color: #ffffff;
+    border: 1px solid #8a8282;
+
+}
+.acd2:hover {
+    background-color: #7a7a7a;
+    color: #fff;    
+
+}
+
+.acd1:hover {
+    background-color: #cc5252;
+    color: #fff;    
+
+}
+a.acd2 {
+    font-family: 'Inter' !important;
+    font-weight: 600;
+    color: #595858;    
+}
+.acd3 {
+    border: 1px solid #f39c12;
+}
+a.acd3 {
+    font-family: 'Inter' !important;
+    font-weight: 600;
+    color: #f39c12;    
+}
+.acd3:hover {
+    background-color: #f39c12;
+    color: #fff;    
+
+}
+.acd4 {
+    background-color: #a5a303;
+}
+a.acd4 {
+    font-family: 'Inter' !important;
+    font-weight: 600;
+    color: #ffffff;    
+}
+.acd4:hover {
+    background-color: #cc5252;
+    color: #fff;    
+
+}
+.buttons-acd a i {
+    margin-right: 5px;
+}
+    /* Định dạng phần cài đặt */
+
+.top-bg-op-box {
+    position: absolute;
+    z-index: 1; /* Đặt z-index thấp hơn so với main */
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 388px;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    display: block;
+    content: "";
+}
+.status-theloai {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+}
+.acd-item {
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.author-rating-container{
+    display: flex;
+    margin: 28px 0 25px 0;
+}
+.ul-acd {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    
+}
+.contents-container {
+    width: 70%;
+    margin: 0 auto;
+    background-color: #fff;
+
+}
+.chapter-info .chapter-dropdown select {
+    width: 20%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 13px;
+    box-sizing: border-box;
+}
+.chapter-info .prev-chapter,
+.chapter-info .next-chapter {
+    position: absolute;
+    top: 0;
+    width: 18%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+.content-text {
+    font-size: 18px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.filter-container-eds {
+    width: 25%;
+    float: left;
+    background-color: #f2f2f2;
+    padding: 20px;
+    box-sizing: border-box;
+    min-height: 800px;
+    border-radius: 20px;
+}
+
+.list-container-eds {
+    width: 75%;
+    float: right;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.filter-list-eds {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filter-item-eds {
+    margin-bottom: 10px;
+}
+
+.filter-list-eds a {
+    text-decoration: none;
+    color: #666;
+    display: block;
+    padding: 8px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #666;
+    border-radius: 5px;
+    font-size: 11px;
+    font-family: Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;;
+
+}
+
+.filter-list-eds a:hover {
+    background-color: #666;
+    color: #ffffff;
+
+}
+
+.selected-category-eds {
+    border-bottom: 1px solid #ccc;
+}
+
+.selected-keywords-eds {
+    margin-top: 10px;
+}
+
+.result-item-eds {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.additional-info-container-eds {
+display: flex;
+}
+
+.additional-info-list-eds {
+list-style-type: none;
+padding: 0;
+margin: 0;
+display: flex;
+gap: 27px;
+}
+.additional-info-list-eds li:hover {
+color: #b78a28;
+
+}
+
+.additional-info-list-eds li {
+padding: 2px;
+margin-top: 12px;
+border-bottom: 1px solid #ccc;
+font-size: 14px;
+font-weight: 500;
+font-family: Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;;
+
+}
+.weekly-item {
+    text-align: left;
+}
+
+.fa-medal {
+    color: rgb(255, 128, 0);
+    font-size: 20px;
+}
+
+
+.weekly-item p {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;;
+    
+}
+
+.tieudetruyen {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    text-transform: capitalize;
+    display: block; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; 
+}
+.tieudetruyena {
+    text-decoration: none;
+    color: #ccc;
+    text-transform: capitalize;
+    display: block;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%; /* Hoặc bạn có thể đặt một giá trị cố định, ví dụ: 200px */
+    max-width: 370px;
+    font-weight: 600
+
+
+}
+.li-acd a {
+    display: flex;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    width: 100%; /* Đặt chiều rộng cố định */
+    align-items: center;
+}
+.li-acd p {
+    display: block;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    width: 100%; /* Đặt chiều rộng cố định */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    align-items: center;
+    margin: 0
+}
+.tieudetruyena:hover {
+    color: #b78a28;
+}
+.tieudetruyen:hover {
+    color: #b78a28;
+}
+.tenuser {
+    font-size: 14px;
+    color: #666;
+}
+
+.luotdoc {
+    font-size: 14px;
+    color: #888;
+}
+.top-1-info {
+    text-align: left;
+    margin-top: 10px;
+}
+
+#settingsPanel {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 50%; /* Chiều rộng của bảng điều khiển cài đặt */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+
+.tenuser {
+    font-size: 13px;
+    color: #524d4d;
+    margin: 10px 0 10px 0px;
+    font-weight: 600;
+
+}
+
+
+.additional-info-list-eds {
+    list-style: none;
+    display: flex;
+}
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+}
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-section {
+    flex: 1;
+    margin-left: 12%;
+}
+
+.footer-section h3 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    padding: 0;
+}
+.footer-section a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.social-icons {
+    display: flex;
+    padding: 0;
+}
+.social-icons li {
+    display: flex;
+    padding: 0;
+}
+.social-icons li {
+    margin-right: 10px;
+    list-style: none;
+
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 20px;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+}
+.chapter-info {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+}
+.right-column_vc123 {
+    width: 85%;
+}
+.chapter-dropdown-container{
+    display: flex;
+}
+.settings-icon , .chapter-icon , .bookmark-icon {
+    cursor: pointer;
+    width: 100px;
+    background-color: #5db85c; /* Màu nền xám */
+    color: #fff; /* Màu chữ trắng */
+    text-align: center;
+    line-height: 30px; /* Điều chỉnh line-height để canh giữa nếu cần */
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 3px;
+}
+
+.settings-icon i {
+    margin-right: 5px; /* Khoảng cách giữa biểu tượng và văn bản */
+}
+.settings-menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    margin-top: 27px;
+}
+
+.chapter-info {
+    text-align: justify;
+    background-color: #ffffff;
+    border-radius: 5px;
+    position: relative;
+}
+.content-container {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #bebebe30;
+}
+/* Các định nghĩa cơ bản đã được cung cấp */
+.chapter-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    overflow-y: auto;
+}
+
+.chapter-modal-content {
+    background: white;
+    margin: 5% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 1200px; /* Giữ cho nó không quá to trên màn hình lớn */
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.chapter-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Đảm bảo không có khoảng cách dư thừa */
+    display: flex; /* Bắt đầu sử dụng flexbox */
+    flex-wrap: wrap; /* Cho phép các mục chuyển xuống dòng tiếp theo khi không đủ chỗ */
+    justify-content: space-between; /* Phân tán đều khoảng cách giữa các mục */
+}
+
+.chapter-list li {
+    margin-bottom: 10px;
+    flex-basis: calc(50% - 10px); /* Cấp phát không gian cho mỗi mục, trừ đi khoảng cách giữa các mục */
+    box-sizing: border-box; /* Điều chỉnh padding và border vào trong kích thước cuối cùng */
+}
+
+.chapter-list li a {
+    text-decoration: none;
+    color: black;
+    display: block; /* Tạo khối clickable */
+    padding: 10px;
+    transition: background-color 0.3s; /* Tạo hiệu ứng chuyển đổi màu sắc khi hover */
+}
+
+.chapter-list li a:hover {
+    background-color: #f7f7f7;
+    color: #aa801a;
+}
+
+/* Media queries cho màn hình nhỏ hơn – chuyển sang 1 cột */
+.comment-avatar img {
+    width: 40px; /* Kích thước của avatar */
+    height: 40px; /* Đảm bảo avatar là hình tròn */
+    border-radius: 50%; /* Làm tròn hình ảnh */
+    object-fit: cover; /* Đảm bảo ảnh không bị méo */
+  }
+  
+  /* Style cho nội dung bình luận */
+  .comment-content {
+    flex: 1;
+    padding-left: 15px;
+  }
+  
+  .comment-info {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .comment-time {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 5px;
+  }
+  
+  .comment-text {
+    margin-top: 10px;
+    line-height: 1.5;
+    color: #444;
+  }
+/* Style cho form bình luận */
+#comment-form {
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#comment-form label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+#comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  font-family: Arial, sans-serif;
+}
+
+#comment-form input[type="button"] {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#comment-form input[type="button"]:hover {
+  background-color: #0056b3;
+}
+
+/* Style cho thông báo đăng nhập */
+#login-prompt {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #ffffe0;
+  border-left: 4px solid #ffc107;
+  border-radius: 4px;
+}
+
+#login-prompt a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+#login-prompt a:hover {
+  text-decoration: underline;
+}
+/* Style cho form bình luận */
+#comment-form {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  #comment-form label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  #comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-family: Arial, sans-serif;
+  }
+  
+  #comment-form input[type="button"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  #comment-form input[type="button"]:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style cho thông báo đăng nhập */
+  #login-prompt {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ffffe0;
+    border-left: 4px solid #ffc107;
+    border-radius: 4px;
+  }
+  
+  #login-prompt a {
+    color: #0056b3;
+    text-decoration: none;
+  }
+  
+  #login-prompt a:hover {
+    text-decoration: underline;
+  }
+
+  .top-1-image {
+    position: relative;
+    width: 150px; /* Hoặc bất kỳ kích thước nào bạn muốn */
+    display: inline-block; /* Để hình ảnh được hiển thị inline và có thể đặt kích thước */
+}
+
+.top-1-image img {
+    width: 100%;
+    height: auto;
+    display: block; /* Loại bỏ khoảng trắng dưới ảnh */
+    transform: perspective(1000px) rotateY(-30deg) translateZ(-20px); /* Áp dụng hiệu ứng nghiêng */
+    transition: transform 0.3s ease; /* Tạo hiệu ứng chuyển đổi mượt mà khi các thuộc tính biến đổi thay đổi */
+}
+
+.top-1-image::after {
+    content: "";
+    position: absolute;
+    z-index: -1; /* Đặt bóng đổ phía sau hình ảnh */
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5); /* Tạo bóng đổ */
+    transform: translateZ(-1px); /* Đẩy bóng đổ về phía sau */
+}
+
+.top-1-image::before {
+    content: "";
+    position: absolute;
+    z-index: 1; /* Lưng truyện nằm trên hình ảnh nhưng dưới bóng đổ */
+    left: 100%; /* Điều chỉnh để phù hợp với độ dày của cuốn truyện */
+    width: 5%; /* Độ dày của lưng truyện */
+    height: 100%; /* Chiều cao của lưng truyện */
+    background-color: #efefef; /* Màu nền của lưng truyện */
+    box-shadow: inset 0 0 5px #333; /* Tạo hiệu ứng bóng trong cho lưng truyện */
+    transform: rotateY(-30deg); /* Điều chỉnh góc nghiêng của lưng truyện */
+    transform-origin: 0% 50%; /* Điểm gốc của phép biến đổi */
+}
+/* Định dạng cho cột trái và danh sách menu */
+.left-column_vc123 {
+    width: 200px; /* Độ rộng của cột trái */
+    background-color: #f8f9fa; /* Màu nền của cột trái */
+    padding: 20px; /* Khoảng cách nội dung bên trong cột trái */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Đổ bóng cho cột trái */
+}
+
+.nav_vc123 {
+    list-style: none; /* Loại bỏ dấu đầu dòng của danh sách */
+    padding: 0; /* Xóa khoảng cách bên trong của danh sách */
+    margin: 0; /* Xóa khoảng cách ngoài của danh sách */
+}
+
+.nav-item_vc123 {
+    padding: 10px 0; /* Khoảng cách dọc của mỗi mục trong danh sách */
+    border-bottom: 1px solid #ddd; /* Đường viền phân cách giữa các mục */
+}
+
+.nav-item_vc123 a {
+    display: block; /* Biến mỗi liên kết thành khối để có thể bao bọc nội dung */
+    text-decoration: none; /* Loại bỏ gạch chân của liên kết */
+    color: #333; /* Màu chữ của liên kết */
+}
+
+.nav-item_vc123 i {
+    margin-right: 10px; /* Khoảng cách phía bên phải giữa biểu tượng và nội dung của mục */
+}
+/* Định dạng biểu tượng có class là 'fa' */
+.fa {
+    font-size: 24px; /* Kích thước của biểu tượng */
+    color: #007bff; /* Màu của biểu tượng */
+    margin-right: 10px; /* Khoảng cách phía bên phải giữa biểu tượng và nội dung khác */
+    /* Các thuộc tính khác tùy ý */
+}
+
+/* Định dạng biểu tượng nằm trong một liên kết */
+a .fa {
+    text-decoration: none; /* Loại bỏ gạch chân của biểu tượng nằm trong liên kết */
+}
+
+/* Định dạng biểu tượng khi rê chuột qua */
+.fa:hover {
+    color: #ff0000; /* Màu của biểu tượng khi rê chuột qua */
+}
+
+
+}
+#btnTop {
+    position: fixed; /* Đặt nút ở vị trí cố định */
+    bottom: 20px; /* Cách đáy trang 20px */
+    right: 8px; /* Cách cạnh phải trang 30px */
+    z-index: 99; /* Đảm bảo nút nằm trên cùng */
+    border: none; /* Không viền */
+    outline: none; /* Không đường viền khi focus */
+    background-color: #b78a28cf; /* Màu nền */
+    color: white; /* Màu chữ */
+    cursor: pointer; /* Con trỏ chuột khi di qua */
+    padding: 15px; /* Đệm */
+    border-radius: 10px; /* Bo góc */
+}
+
+#btnTop:hover {
+    background-color: #b78a28cf; /* Màu nền khi hover */
+}
+html {
+    scroll-behavior: smooth;
+}
+.close-btn {
+    float: right; /* Đặt nút ở góc phải của settingsPanel */
+    font-size: 25px; /* Kích thước của ký tự X */
+    line-height: 20px;
+    cursor: pointer; /* Biểu tượng con trỏ khi di chuyển chuột qua nút */
+    border: none; /* Không viền */
+    background: none; /* Không nền */
+    padding: 10px; /* Đệm */
+}
+
+.close-btn:hover {
+    color: red; /* Màu của nút khi di chuyển chuột qua */
+}
+body {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Chrome và Opera */
+  }
+  button#currentlyReadingBtn, button#bookshelfBtn {
+    background: #ccb701;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer; /* Thêm con trỏ chuột để chỉ ra rằng đây là nút có thể nhấn */
+}
+
+button#currentlyReadingBtn.selected, button#bookshelfBtn.selected {
+    background: #e0a800; /* Màu nền cho nút được chọn */
+    /* Các thuộc tính khác giữ nguyên hoặc tùy chỉnh theo ý bạn */
+}
+
+button#currentlyReadingBtn:not(.selected), button#bookshelfBtn:not(.selected) {
+    background: #ccc; /* Màu nền cho nút không được chọn */
+    /* Các thuộc tính khác giữ nguyên hoặc tùy chỉnh theo ý bạn */
+}
+.weekly-lists {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.theh {
+    text-align: center;
+    font-weight: 500;
+    background-size: 200% auto; /* Tăng kích thước background để tạo hiệu ứng chạy */
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shine 5s linear infinite; /* Áp dụng animation đã định nghĩa */
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center; /* Di chuyển background để tạo hiệu ứng chạy */
+    }
+}
+.fsdfs433 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.weekly-item {
+    text-align: left;
+    margin: 10px 0 10px 0;
+}
+i.fa-solid.fa-trophy {
+    font-size: 18px;
+    color: #de7400;
+}
+#settingsPanel {
+    display: none;
+    /* Các thuộc tính CSS khác của bạn ở đây */
+}
+#load-more-comments {
+    display: block;
+    margin: 20px auto; /* Để căn giữa nút */
+    padding: 8px 16px; /* Để tạo khoảng cách và kích thước cho nút */
+    font-size: 14px;
+    font-weight: bold;
+    color: #ff6600;
+    background-color: #ffffff; /* Màu nền của nút */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi màu nền */
+}
+
+#load-more-comments:hover {
+    background-color: #f75b00; /* Màu nền khi rê chuột vào nút */
+    color: #fff;
+}
+/* Style chung cho bình luận */
+.li-acfs {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.3s;
+  }
+  
+  .li-acfs:hover {
+    background-color: #8585854a;
+  }
+  
+  /* Style cho avatar trong bình luận */
+  .comment-info {
+    font-weight: bold;
+    margin: 0;
+}
+
+#settingsPanel h3 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#settingsPanel label {
+    display: block;
+    margin-top: 15px;
+    text-align: left;
+}
+
+#settingsPanel select {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+p.comment-text {
+    font-weight: 600;
+    color: #6a6666;
+    font-size: 12px;
+}
+p.comment-info{
+    color: #6a6666;
+    font-size: 12px;
+
+}
+h3.thehh {
+    font-weight: 500;
+}
+h3.thehh:hover {
+color: #a5a303;
+}
+.luotdoc {
+    font-size: 14px;
+    color: #b78a28!important;
+    font-weight: 700;
+}
+.luotdoc-1 {
+    font-size: 14px; /* Điều chỉnh kích thước font cho lượt đọc của top 1 */
+    font-weight: bold;
+    color: #333;
+
+}
+
+
+i.chuong_ten {
+    font-size: 12px;
+    font-weight: 500;
+    display: block;
+}
+
+/* Điều chỉnh chiều rộng của mỗi 'li' tùy thuộc vào chiều rộng của menu dropdown để chứa đủ số cột mong muốn */
+@media (min-width: 768px) { /* Chỉ áp dụng khi chiều rộng màn hình lớn hơn hoặc bằng 768px */
+    .nav-item234 .dropdown-menu li {
+        width: calc(100% / 3); /* Điều chỉnh này sẽ tạo ra 3 cột */
+    }
+}
+
+i.fa-regular.fa-money-bill-1 {
+    font-size: 18px;
+    color: #bf2c24;
+}
+.luotgold {
+    color: #e5b200;
+}
+ul#gold-dropdown{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* CSS cho liên kết chương trước */
+.prev-chapter a.disabled {
+    color: #ccc; /* Màu chữ xám nhạt */
+    pointer-events: none; /* Không cho phép click */
+}
+
+/* CSS cho liên kết chương sau */
+.next-chapter a.disabled {
+    color: #ccc; /* Màu chữ xám nhạt */
+    pointer-events: none; /* Không cho phép click */
+}
+li{
+    list-style-type: none;
+
+}
+a {
+    text-decoration: none;
+}
+.jdjsa32 {
+    display: flex;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.policy-details {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+.policy-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.policy-content {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.error-message {
+    margin: 20px;
+    padding: 10px;
+    background-color: #fdd;
+    border: 1px solid #f00;
+    color: #f00;
+}
+.cookie-consent-banner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(51, 51, 51, 0.9); /* Sử dụng màu nền trong suốt */
+    color: #fff;
+    text-align: center;
+    display: none;
+    z-index: 9999; /* Đảm bảo hiển thị trên tất cả các phần tử khác */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3); /* Thêm bóng đổ */
+}
+
+.cookie-consent-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cookie-consent-container p {
+    font-size: 1em;
+    margin: 20px;
+}
+
+.cookie-consent-container button {
+    margin: 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #007bff; /* Sử dụng màu xanh của Bootstrap */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cookie-consent-container button:hover {
+    background-color: #0056b3; /* Màu nền khi di chuột qua */
+}
+
+/* Đảm bảo hiển thị đẹp trên các thiết bị nhỏ */
+@media (min-width: 576px) {
+    .cookie-consent-container {
+        flex-direction: row; /* Hiển thị các phần tử con dưới dạng hàng */
+        justify-content: center; /* Căn giữa theo chiều ngang */
+    }
+
+    .cookie-consent-container p {
+        margin-right: 20px; /* Thêm khoảng cách giữa đoạn văn và nút */
+    }
+}
+
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+.current-chapter {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: orange;
+}
+.chapter-content {
+    font-size: 14px;
+    white-space: pre-wrap; /* Đảm bảo xuống dòng khi gặp ký tự xuống dòng trong nội dung */
+    word-wrap: break-word; /* Ngắt từ khi cần để xuống dòng */
+    word-break: break-word; /* Ngắt từ khi cần để xuống dòng */
+    overflow-wrap: break-word; /* Hỗ trợ trình duyệt cũ */
+}
+button.mmdskd123 {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 0px 10px 0 10px;
+}
+.img123321 {
+    border-radius: 50px;
+    border: 2px solid #9a9a9a;
+}
+.completed-stories-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.scroll-button.left {
+    left: 0;
+}
+
+.scroll-button.right {
+    right: 0;
+}
+
+.completed-stories {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+}
+
+.story-itemss {
+    flex: 0 0 auto;
+    display: grid;
+    width: 180px;
+    margin-right: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.story-itemss img {
+    width: 150px;
+    object-fit: cover;
+    height: 237px;
+}
+.tieudetruyena {
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #333;
+    text-transform: capitalize;
+    display: block;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.img123321{
+    max-width: 91px;
+    margin-left: auto;
+}
